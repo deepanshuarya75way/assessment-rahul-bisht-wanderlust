@@ -9,6 +9,11 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    activeSessionId:{type:String,
+            default:null
+    },
+    activeDevice:{type:String,
+        default:null}
 });
 
 const passportPlugin =

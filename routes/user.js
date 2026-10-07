@@ -15,8 +15,10 @@ router
 router.route("/login")
 .get(Usercontroller.renderloginform)
 .post( saveredirectUrl, passport.authenticate("local", 
-  { failureFlash: true, failureRedirect: "/login" }),Usercontroller.login);
+  { failureFlash: true, failureRedirect: "/login" }),Usercontroller.checkActiveSession);
 
 router.get("/logout",Usercontroller.logout);
+
+router.post("/login/takeover",Usercontroller.takeover);
 
 module.exports = router;
